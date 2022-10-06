@@ -1,0 +1,20 @@
+<div class="table-responsive">
+    <table class="table text-center">
+      <thead>
+        <tr>
+          <th style="width: 22%;">Nombre</th>
+          <th style="width: 42%;">Ingredientes</th>
+          <th style="width: 12%;">Precio</th>
+          <th style="width: 24%;">Peso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row--" *ngFor="let pizza of pizzaList" (click)="seleccionarPizza(pizza.nombre)">
+          <th scope="row" class="text-start">{{ pizza.nombre }}</th>
+          <td>{{ pizza.ingredientes }}</td>
+          <td>{{ pizza.precio }}</td>
+          <td>{{ pizza.peso }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

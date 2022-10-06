@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { addDoc, collection, collectionData, updateDoc, doc } from '@angular/fire/firestore';
 import { getFirestore } from 'firebase/firestore';
 import { Observable } from 'rxjs';
+import PizzaI from '../Entities/pizza-interface';
 import UserI from '../Entities/users-interface';
 
 @Injectable({
@@ -28,6 +29,7 @@ export class UserFirestoreService {
     const userRef = collection(getFirestore(), 'usuarios');
     return collectionData(userRef, { idField : 'id' }) as Observable<UserI[]>;
   }
+
 
   getCurrentUser(){
     return localStorage.getItem('profile')

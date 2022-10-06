@@ -2,7 +2,6 @@
     <div class="h-100 p-5 bg-light border rounded-3">
       <h2>Detalle Repartidor</h2>
       <h2 *ngIf="reRecibido">{{reRecibido.name}}</h2>
-      <h2 *ngIf="!reRecibido">Seleccione una pelicula</h2>
       <p>DNI: {{reRecibido?.id}}</p>
       <p>Edad: {{reRecibido?.age}}</p>
       <p>Pais origen: {{reRecibido?.countryOfBirth}}</p>

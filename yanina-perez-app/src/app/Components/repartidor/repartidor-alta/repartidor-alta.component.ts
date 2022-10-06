@@ -19,8 +19,8 @@ export class RepartidorAltaComponent implements OnInit {
     this.newRepartidorForm = this.fb.group({
       id: ['', [Validators.required]],
       name: ['', [Validators.required]],
-      age: ['', Validators.required],
-      transportCapacity: ['', Validators.required],
+      age: ['', [Validators.min(18), Validators.max(130), Validators.required]],
+      transportCapacity: ['', [Validators.min(0), Validators.required]],
       countryOfBirth: ['', Validators.required],
       ownerUnit: ['', [Validators.min(1), Validators.max(100000000), Validators.required]]
     });

@@ -19,6 +19,11 @@ import { TablaRepartidorComponent } from './Components/repartidor/tabla-repartid
 import { RepartidorDetalleComponent } from './Components/repartidor/repartidor-detalle/repartidor-detalle.component';
 import { MasDetalleRepartidorComponent } from './Components/repartidor/mas-detalle-repartidor/mas-detalle-repartidor.component';
 import { DetallePaisComponent } from './Components/repartidor/detalle-pais/detalle-pais.component';
+import { SalenPizzasComponent } from './Components/salen-pizzas/salen-pizzas.component';
+import { AltaPizzaComponent } from './Components/alta-pizza/alta-pizza.component';
+import { ModificaPizzaComponent } from './Components/modifica-pizza/modifica-pizza.component';
+import { DeletePizzaComponent } from './Components/delete-pizza/delete-pizza.component';
+import { PizzaListComponent } from './Components/pizza-list/pizza-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +36,12 @@ import { DetallePaisComponent } from './Components/repartidor/detalle-pais/detal
     RepartidorDetalleComponent,
     TablaRepartidorComponent,
     MasDetalleRepartidorComponent,
-    DetallePaisComponent
+    DetallePaisComponent,
+    SalenPizzasComponent,
+    AltaPizzaComponent,
+    ModificaPizzaComponent,
+    DeletePizzaComponent,
+    PizzaListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { ActivatedRouteSnapshot, CanActivate, CanDeactivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanDeactivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserFirestoreService } from './Servicios/user-firestore-service.service';
 
@@ -10,7 +10,7 @@ import { UserFirestoreService } from './Servicios/user-firestore-service.service
 export class MyGuardGuard implements CanActivate, CanDeactivate<unknown> {
   public currentUser: any;
   
-  constructor(private afAuth: AngularFireAuth, private uService: UserFirestoreService) {
+  constructor(private afAuth: AngularFireAuth, private uService: UserFirestoreService, private router: Router) {
     this.afAuth.onAuthStateChanged((user) => {
       if (user) {
         this.currentUser = user;
@@ -22,7 +22,12 @@ export class MyGuardGuard implements CanActivate, CanDeactivate<unknown> {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.checkUserType();
+    if (this.checkUserType()) {
+      return true;
+    } else {
+      this.router.navigate(['/login']);
+      return false;
+    }
   }
   canDeactivate(
     component: unknown,

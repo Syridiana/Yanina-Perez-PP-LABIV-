@@ -28,20 +28,6 @@ export class RepartidorService {
     return collectionData(userRef, { idField: 'uid' }) as unknown as Observable<RepartidorInterface[]>;
   }
 
-  addPizza(user: PizzaI){
-    const userRef = collection(getFirestore(), 'pizzas');
-    return addDoc(userRef, user);
-  }
 
-  updatePizza(user: PizzaI, date: string){
-    const userDocRef = doc(getFirestore(), `pizzas/${user.id}`);
-    return updateDoc(userDocRef, { loginDate: date });
-  }
-
-
-  getPizzas(){
-    const userRef = collection(getFirestore(), 'pizzas');
-    return collectionData(userRef, { idField : 'id' }) as unknown as Observable<PizzaI[]>;
-  }
 
 }

@@ -1,0 +1,26 @@
+<form class="card mb-4 rounded-3 shadow-sm" (ngSubmit)="deletePizza()" >
+    <div class="card-header py-3">
+      <h4 class="my-0 fw-normal">Elimina Pizzas</h4>
+    </div>
+    <div class="card-body">
+      <ul class="list-unstyled mt-3 mb-4">
+        <li class="input-block">
+            <label for="login-email">Nombre</label>            <br> 
+            <input id="login-email" type="text" disabled value="{{pizzaRecibida?.nombre}}">
+        </li>
+        <li class="input-block">
+            <label for="login-email">Ingredientes</label>            <br> 
+            <input id="login-email" type="text" disabled value="{{pizzaRecibida?.ingredientes}}">
+        </li>
+        <li class="input-block">
+            <label for="login-email">Precio</label>            <br> 
+            <input id="login-email" type="text" disabled value="{{pizzaRecibida?.precio}}">
+        </li>
+        <li class="input-block">
+            <label for="login-email">Peso</label>            <br> 
+            <input id="login-email" type="text" disabled value="{{pizzaRecibida?.peso}}">
+        </li>
+      </ul>
+      <button type="submit" class="w-100 btn btn-lg btn-outline-primary">Eliminar</button>
+    </div>
+</form>
