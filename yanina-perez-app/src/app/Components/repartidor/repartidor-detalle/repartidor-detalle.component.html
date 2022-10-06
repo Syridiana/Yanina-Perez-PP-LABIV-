@@ -1,0 +1,9 @@
+<p>busqueda works!</p>
+<app-tabla-repartidor (eventoSeleccioneRe)="cambiarRe($event)"
+ [peliRecibidaABorrar] = "peliABorrar" [movieReceivedToAdd] = "movieToAdd"></app-tabla-repartidor>
+<div class="row align-items-md-stretch component-wrapper">
+<!--     <div class="col-sm"><app-baja-pelicula [peliRecibida] = "peliAPasar" (eventoEliminarPeli)="cambiarPeliABorrar($event)"></app-baja-pelicula></div>
+ -->    <div class="col-sm"><app-mas-detalle-repartidor [reRecibido] = "ReAPasar"></app-mas-detalle-repartidor></div>
+<!--     <div class="col-sm"><app-detalle-pais [peliRecibida] = "peliAPasar"></app-detalle-pais></div> -->
+<div class="col-sm"><app-detalle-pais [reRecibido] = "ReAPasar"></app-detalle-pais></div>
+</div>

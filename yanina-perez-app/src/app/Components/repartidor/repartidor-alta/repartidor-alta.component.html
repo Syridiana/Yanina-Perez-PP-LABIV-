@@ -1,0 +1,89 @@
+<div class="container">
+    <main>
+      <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+        <h2>Alta Repartidor</h2>
+        <p class="lead">Complete los datos del repartidor</p>
+      </div>
+  
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <app-tabla-paises (emitPais)="agregarNacionalidad($event)"></app-tabla-paises>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Alta Repartidor</h4>
+          <form class="needs-validation" [formGroup]="newRepartidorForm">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="id" class="form-label">DNI</label>
+                <input type="number" class="form-control" id="id" placeholder="" value="" formControlName="id">
+                <div class="invalid-feedback" *ngIf="newRepartidorForm.get('id')?.hasError('required') 
+                && newRepartidorForm.get('id')?.touched">
+                  Se requiere DNI valido.
+                </div>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" placeholder="" value="" formControlName="name">
+                <div class="invalid-feedback" *ngIf="newRepartidorForm.get('name')?.hasError('required')
+                 && newRepartidorForm.get('name')?.touched">
+                  Se requiere nombre.
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <label for="age" class="form-label">Edad</label>
+                <input type="number" class="form-control" id="age" formControlName="age">
+                <span class="invalid-feedback" *ngIf="newRepartidorForm.get('age')?.hasError('required')
+                 && newRepartidorForm.get('age')?.touched">
+                  Ingresar edad.
+                </span>
+              </div>
+              <div class="col-12">
+                <label for="transportCapacity" class="form-label">Capacidad de Transporte</label>
+                <input type="number" class="form-control" id="transportCapacity" formControlName="transportCapacity">
+                <span class="invalid-feedback" *ngIf="newRepartidorForm.get('transportCapacity')?.hasError('required')
+                 && newRepartidorForm.get('transportCapacity')?.touched">
+                  Dato requerido.
+                </span>
+              </div>
+
+              <div class="col-12">
+                <label for="ownerUnit" class="form-label">Unidad Propia</label><br>
+                <input type="radio" id="yes" name="ownerUnit" formControlName="ownerUnit" value="true">
+                <label for="yes">Sí</label><br>
+                <input type="radio" id="no" name="ownerUnit" formControlName="ownerUnit" value="false">
+                <label for="no">No</label><br>
+              </div>
+
+              <div class="col-12">
+                <label for="countryOfBirth" class="form-label">País de Origen</label>
+                <input type="text" class="form-control" id="countryOfBirth" 
+                value="{{ nacionalidad?.nombre }}" formControlName="countryOfBirth">
+              </div>
+  
+
+            </div>
+  
+            <hr class="my-4">
+  
+
+
+  
+            <button class="w-100 btn btn-primary btn-lg" type="submit" (click)="agregarRepartidor()">Agregar Repartidor</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+      <p class="mb-1">&copy; 2017–2021 Company Name</p>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+      </ul>
+    </footer>
+  </div>
+  

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "yanina-perez-laboiv2022": {
+      "hosting": {
+        "yanina-perez-app": [
+          "pp-yanina-perez"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "yanina-perez-laboiv2022"
+  }
+}
